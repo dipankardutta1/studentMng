@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>StudentMng</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet>
+  	<servlet-name>loginServlet</servlet-name>
+  	<servlet-class>com.student.demo.servlet.LoginServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>loginServlet</servlet-name>
+  	<url-pattern>/dologin.do</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+	  	<servlet-name>deleteServlet</servlet-name>
+	  	<servlet-class>com.student.demo.servlet.DeleteServlet</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>deleteServlet</servlet-name>
+	  	<url-pattern>/delete.do</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+	  	<servlet-name>processUserServlet</servlet-name>
+	  	<servlet-class>com.student.demo.servlet.ProcessUserServlet</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>processUserServlet</servlet-name>
+	  	<url-pattern>/processUser.do</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+	  	<servlet-name>editServlet</servlet-name>
+	  	<servlet-class>com.student.demo.servlet.EditServlet</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>editServlet</servlet-name>
+	  	<url-pattern>/edit.do</url-pattern>
+	  </servlet-mapping>
+  
+  
+</web-app>
