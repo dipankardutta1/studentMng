@@ -26,10 +26,10 @@ public class ProcessUserServlet extends HttpServlet{
 		
 		
 		
-			if(req.getParameter("id") == null || req.getParameter("id").isEmpty()){
+		/* if(req.getParameter("id") == null || req.getParameter("id").isEmpty()){ */
 			
 				try{
-					SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+					SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 					
 					
 					String name = req.getParameter("name");
@@ -55,7 +55,7 @@ public class ProcessUserServlet extends HttpServlet{
 					req.setAttribute("userList", userList);
 					
 					
-					req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+					req.getRequestDispatcher("welcome.jsp").forward(req, resp);
 					
 				
 				
@@ -63,7 +63,7 @@ public class ProcessUserServlet extends HttpServlet{
 					
 				}
 		
-		}else{
+		/*}else{
 			
 			try{
 			
@@ -101,7 +101,7 @@ public class ProcessUserServlet extends HttpServlet{
 			}catch(Exception e){
 				
 			}
-		}
+		}*/
 		
 		
 		

@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.student.demo.pojo.User;
 import com.student.demo.service.LoginService;
@@ -22,21 +23,41 @@ public class LoginServlet extends HttpServlet{
 		String password = req.getParameter("password");
 		
 		
-		Boolean status = loginService.validateUser(username, password);
+		User user = loginService.validateUser(username, password);
 		
-		if(status){
-			
-			List<User> userList =   loginService.findAllUsers();
-			
-			req.setAttribute("userList", userList);
-			
-			
-			req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
-			
-			//resp.sendRedirect("dashboard.jsp");
+		if(user == null){
+			resp.sendRedirect("login.jsp?msg=Wrong USername and Password");
 		}else{
-			resp.sendRedirect("login.jsp");
+			
+			
+			HttpSession session  = req.getSession();
+			
+			session.setAttribute("user",user);
+			
+			List<User> userList = loginService.findAllUsers();
+			
+			req.setAttribute("userList",userList);
+			
+			
+			req.getRequestDispatcher("welcome.jsp").forward(req, resp);
+			
+			//resp.sendRedirect("welcome.jsp");
 		}
+		
+		
+		/*
+		 * if(status){
+		 * 
+		 * List<User> userList = loginService.findAllUsers();
+		 * 
+		 * req.setAttribute("userList", userList);
+		 * 
+		 * 
+		 * req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+		 * 
+		 * //resp.sendRedirect("dashboard.jsp"); }else{ resp.sendRedirect("login.jsp");
+		 * }
+		 */
 		
 		
 		

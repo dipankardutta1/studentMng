@@ -17,47 +17,48 @@ public class UserDao {
 		
 		Connection connection = null;
 		
-		try{
-			Class.forName("com.mysql.jdbc.Driver");
-			
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_382","root","root");
-			
-			
-			
-			
-			
-			
-			
-			PreparedStatement preparedStatement = connection.prepareStatement("select * from user where username = ? and password = ?");
-			preparedStatement.setString(1, username);
-			preparedStatement.setString(2, password);
-			
-			ResultSet resultSet = preparedStatement.executeQuery();
-			
-			
-			User user = null;
-			
-			while(resultSet.next()){
-				user = new User();
-				user.setId(resultSet.getInt("id"));
-				user.setName(resultSet.getString("name"));
-				user.setDob(resultSet.getDate("dob"));
-				user.setPhoneNo(resultSet.getString("phone_no"));
-				user.setUsername(resultSet.getString("username"));
-				user.setPassword(resultSet.getString("password"));
-			}
-			
-			return user;
-			
-		}catch(Exception e){
-			return null;
-		}finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				
-			}
-		}
+		
+		
+		
+			 try{ 
+				 
+				 Class.forName("com.mysql.cj.jdbc.Driver");
+			  
+			  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_419","root","root");
+			  
+			  
+			  
+			  PreparedStatement preparedStatement = connection.
+			  prepareStatement("select * from user where username = ? and password = ?");
+			  preparedStatement.setString(1, username); preparedStatement.setString(2,
+			  password);
+			  
+			  ResultSet resultSet = preparedStatement.executeQuery();
+			  
+			  
+			  User user = null;
+			  
+			  while(resultSet.next()){ 
+				  user = new User();
+				  user.setId(resultSet.getInt("id"));
+				  user.setName(resultSet.getString("name"));
+				  user.setDob(resultSet.getDate("dob"));
+				  user.setPhoneNo(resultSet.getString("phone_no"));
+				  user.setUsername(resultSet.getString("username"));
+				  user.setPassword(resultSet.getString("password")); }
+				  
+				  return user;
+			  
+			  }catch(Exception e){ 
+				  return null; 
+			  }finally { 
+				  try { 
+					  connection.close(); 
+				  }catch (SQLException e) {
+			  
+				  } 
+		  }
+		 
 		
 		
 		
@@ -67,9 +68,9 @@ public class UserDao {
 		Connection connection = null;
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_382","root","root");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_419","root","root");
 			
 			PreparedStatement preparedStatement = connection.prepareStatement("select * from user");
 			
@@ -108,7 +109,7 @@ public class UserDao {
 
 		Connection connection = null;
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_382","root","root");
 			
@@ -132,9 +133,9 @@ public class UserDao {
 	public void save(User user) {
 		Connection connection = null;
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_382","root","root");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_419","root","root");
 			
 			String sql = "insert into user(name,phone_no,dob,username,password) values(?,?,?,?,?)";
 			

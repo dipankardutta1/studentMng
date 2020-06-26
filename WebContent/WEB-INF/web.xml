@@ -34,7 +34,7 @@
 	  
 	  <servlet-mapping>
 	  	<servlet-name>processUserServlet</servlet-name>
-	  	<url-pattern>/processUser.do</url-pattern>
+	  	<url-pattern>/processUser</url-pattern>
 	  </servlet-mapping>
 	  
 	  
@@ -46,6 +46,18 @@
 	  <servlet-mapping>
 	  	<servlet-name>editServlet</servlet-name>
 	  	<url-pattern>/edit.do</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  
+	   <servlet>
+	  	<servlet-name>logoutServlet</servlet-name>
+	  	<servlet-class>com.student.demo.servlet.LogoutServlet</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>logoutServlet</servlet-name>
+	  	<url-pattern>/logout</url-pattern>
 	  </servlet-mapping>
   
   

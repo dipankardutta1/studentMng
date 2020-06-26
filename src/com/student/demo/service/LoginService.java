@@ -11,18 +11,13 @@ public class LoginService {
 	private UserDao dao = new UserDao();
 	
 	
-	public Boolean validateUser(String username,String password){
+	public User validateUser(String username,String password){
 		
 		
 		User user = dao.getUserByUsernameAndPassword(username, password);
 		
-		if(user == null){
-			return false;
-		}else{
-			return true;
-		}
 		
-		
+		return user;
 		
 	}
 

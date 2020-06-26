@@ -67,6 +67,16 @@ body {
 </head>
 <body>
 
+
+<%
+	if(!(request.getParameter("msg") == null  || request.getParameter("msg").isEmpty())){
+%>
+<div class="alert alert-danger">
+  <strong>Alert!</strong>  <%= request.getParameter("msg") %>
+</div>
+
+<% } %>
+
 <div class="container">
 
       <form class="form-signin" action="dologin.do" method="post">
