@@ -111,7 +111,7 @@ public class UserDao {
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_382","root","root");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_419","root","root");
 			
 			PreparedStatement preparedStatement = connection.prepareStatement("delete from user where id = ?");
 			preparedStatement.setInt(1, id);
@@ -167,9 +167,9 @@ public class UserDao {
 		Connection connection = null;
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_382","root","root");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_419","root","root");
 			
 			PreparedStatement preparedStatement = connection.prepareStatement("select * from user where id = ?");
 			preparedStatement.setInt(1, id);
@@ -211,7 +211,7 @@ public class UserDao {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_382","root","root");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_419","root","root");
 			
 			String sql = "update user set name = ?,phone_no = ?,dob = ?,username= ? ,password= ? where id = ?";
 			

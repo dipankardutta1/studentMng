@@ -26,14 +26,14 @@ public class EditServlet extends HttpServlet{
 		User user = userService.getUserByUserId(id);
 		
 		
-		req.setAttribute("user",user);
+		req.setAttribute("userData",user);
 		
 		List<User> userList =   loginService.findAllUsers();
 		
 		req.setAttribute("userList", userList);
 		
 		
-		req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+		req.getRequestDispatcher("welcome.jsp").forward(req, resp);
 		
 		
 		

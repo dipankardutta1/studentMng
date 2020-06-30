@@ -30,7 +30,7 @@ public class DeleteServlet extends HttpServlet{
 		req.setAttribute("userList", userList);
 		
 		
-		req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+		req.getRequestDispatcher("welcome.jsp").forward(req, resp);
 		
 		
 	}
