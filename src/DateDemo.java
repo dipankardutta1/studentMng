@@ -9,6 +9,11 @@ public class DateDemo {
 		
 		Date date  = new Date();
 		
+		// adding comment
+		
+		
+		// code 
+		
 		
 		System.out.println(date);
 		
