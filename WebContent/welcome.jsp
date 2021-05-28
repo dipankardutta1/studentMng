@@ -108,9 +108,12 @@
   		
   		<tbody>
   		
-  			<%-- <%
+  			<%--  <%
+  			
+  				List<User> userList = request.getAttribute("userList");
+  			
   				for(User obj : userList){
-  			%> --%>
+  			%>  --%>
   			<c:forEach items="${requestScope.userList}" var="row">
 	  			<tr>
 	  				<td>${row.name }</td>

@@ -13,8 +13,12 @@ public class LoginService {
 	
 	public User validateUser(String username,String password){
 		
+		// logic
 		
 		User user = dao.getUserByUsernameAndPassword(username, password);
+		
+		
+		
 		
 		
 		return user;

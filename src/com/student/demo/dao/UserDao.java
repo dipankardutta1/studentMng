@@ -18,7 +18,7 @@ public class UserDao {
 		Connection connection = null;
 		
 		
-		
+			// comment
 		
 			 try{ 
 				 
@@ -28,10 +28,10 @@ public class UserDao {
 			  
 			  
 			  
-			  PreparedStatement preparedStatement = connection.
-			  prepareStatement("select * from user where username = ? and password = ?");
-			  preparedStatement.setString(1, username); preparedStatement.setString(2,
-			  password);
+			  PreparedStatement preparedStatement = connection.prepareStatement("select * from user where username = ? and password = ?");
+			  
+			  preparedStatement.setString(1, username); 
+			  preparedStatement.setString(2,password);
 			  
 			  ResultSet resultSet = preparedStatement.executeQuery();
 			  
@@ -45,7 +45,8 @@ public class UserDao {
 				  user.setDob(resultSet.getDate("dob"));
 				  user.setPhoneNo(resultSet.getString("phone_no"));
 				  user.setUsername(resultSet.getString("username"));
-				  user.setPassword(resultSet.getString("password")); }
+				  user.setPassword(resultSet.getString("password")); 
+			  }
 				  
 				  return user;
 			  
