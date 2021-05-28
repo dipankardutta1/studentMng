@@ -69,6 +69,7 @@ body {
 
 
 <%
+	// comment
 	if(!(request.getParameter("msg") == null  || request.getParameter("msg").isEmpty())){
 %>
 <div class="alert alert-danger">
